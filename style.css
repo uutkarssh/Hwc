@@ -282,26 +282,64 @@ em { font-style: italic; color: var(--terracotta); }
    HERO
    ============================================================ */
 .hero {
+  position: relative;
   min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
   padding: 5rem 2rem;
-  max-width: 1180px;
-  margin: 0 auto;
-  position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
-.hero-bg {
-  position: fixed;
+
+/* Hero banner image */
+.hero-banner {
+  position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(122,158,126,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(193,127,90,0.07) 0%, transparent 60%);
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   pointer-events: none;
 }
-.hero-content { flex: 1; max-width: 580px; }
+
+.hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hero gradient overlay for readability */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(135deg, rgba(245, 240, 232, 0.88) 0%, rgba(245, 240, 232, 0.75) 50%, rgba(245, 240, 232, 0.82) 100%),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(122,158,126,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(193,127,90,0.04) 0%, transparent 60%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content wrapper to position content on top of banner */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.hero-content { 
+  flex: 1; 
+  max-width: 580px;
+}
+
 .hero-eyebrow {
   font-size: 0.78rem;
   font-weight: 500;
@@ -310,10 +348,12 @@ em { font-style: italic; color: var(--terracotta); }
   color: var(--sage-dark);
   margin-bottom: 1rem;
 }
+
 .hero-title {
   margin-bottom: 1.2rem;
   color: var(--bark);
 }
+
 .hero-subtitle {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -321,6 +361,7 @@ em { font-style: italic; color: var(--terracotta); }
   max-width: 480px;
   margin-bottom: 2rem;
 }
+
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -328,7 +369,10 @@ em { font-style: italic; color: var(--terracotta); }
 }
 
 /* Hero card */
-.hero-visual { flex-shrink: 0; }
+.hero-visual { 
+  flex-shrink: 0;
+}
+
 .hero-card {
   background: var(--white);
   border: 1px solid var(--mist);
@@ -336,7 +380,9 @@ em { font-style: italic; color: var(--terracotta); }
   padding: 2rem 2.2rem;
   width: 280px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
+
 .hero-card-line {
   width: 36px;
   height: 3px;
@@ -344,6 +390,7 @@ em { font-style: italic; color: var(--terracotta); }
   border-radius: 2px;
   margin-bottom: 1rem;
 }
+
 .hero-card-label {
   font-size: 0.75rem;
   font-weight: 500;
@@ -352,6 +399,7 @@ em { font-style: italic; color: var(--terracotta); }
   color: var(--sage-dark);
   margin-bottom: 1rem;
 }
+
 .hero-card-list li {
   font-size: 0.92rem;
   color: var(--bark-mid);
@@ -360,6 +408,7 @@ em { font-style: italic; color: var(--terracotta); }
   position: relative;
   padding-left: 1rem;
 }
+
 .hero-card-list li::before {
   content: '';
   position: absolute;
@@ -371,6 +420,7 @@ em { font-style: italic; color: var(--terracotta); }
   background: var(--sage);
   border-radius: 50%;
 }
+
 .hero-card-list li:last-child { border-bottom: none; }
 
 /* ============================================================
@@ -380,6 +430,7 @@ em { font-style: italic; color: var(--terracotta); }
   background: var(--bark);
   padding: 2.5rem 2rem;
 }
+
 .strip-inner {
   max-width: 720px;
   margin: 0 auto;
@@ -389,12 +440,14 @@ em { font-style: italic; color: var(--terracotta); }
   gap: 2rem;
   flex-wrap: wrap;
 }
+
 .strip-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
 }
+
 .strip-number {
   font-family: var(--font-display);
   font-size: 2.4rem;
@@ -402,6 +455,7 @@ em { font-style: italic; color: var(--terracotta); }
   color: var(--terracotta);
   line-height: 1;
 }
+
 .strip-label {
   font-size: 0.78rem;
   font-weight: 400;
@@ -409,6 +463,7 @@ em { font-style: italic; color: var(--terracotta); }
   color: var(--mist);
   text-align: center;
 }
+
 .strip-divider {
   width: 1px;
   height: 48px;
@@ -419,11 +474,13 @@ em { font-style: italic; color: var(--terracotta); }
    SERVICES OVERVIEW
    ============================================================ */
 .services-overview { background: var(--cream); }
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
+
 .service-card {
   background: var(--white);
   border: 1px solid var(--mist);
@@ -431,30 +488,37 @@ em { font-style: italic; color: var(--terracotta); }
   padding: 2rem;
   transition: box-shadow var(--transition), transform var(--transition);
 }
+
 .service-card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
+
 .service-icon-wrap {
   margin-bottom: 1.2rem;
 }
+
 .service-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 .service-icon.s1 { background: linear-gradient(135deg, var(--sage), var(--sage-dark)); }
 .service-icon.s2 { background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark)); }
 .service-icon.s3 { background: linear-gradient(135deg, #B8A99A, var(--bark-mid)); }
+
 .service-card h3 {
   margin-bottom: 0.7rem;
   font-size: 1.25rem;
 }
+
 .service-card p {
   font-size: 0.92rem;
   line-height: 1.75;
   margin-bottom: 1.2rem;
 }
+
 .card-link {
   font-size: 0.85rem;
   font-weight: 500;
@@ -465,7 +529,9 @@ em { font-style: italic; color: var(--terracotta); }
   align-items: center;
   gap: 0.3rem;
 }
+
 .card-link:hover { color: var(--terracotta-dark); }
+
 .card-link::after {
   content: '';
   display: inline-block;
@@ -474,22 +540,26 @@ em { font-style: italic; color: var(--terracotta); }
   background: currentColor;
   transition: width var(--transition);
 }
+
 .card-link:hover::after { width: 20px; }
 
 /* ============================================================
    TRAINER PREVIEW
    ============================================================ */
 .trainer-preview { background: var(--cream-dark); }
+
 .trainer-flex {
   display: flex;
   align-items: center;
   gap: 4rem;
   flex-wrap: wrap;
 }
+
 .trainer-image-wrap {
   position: relative;
   flex-shrink: 0;
 }
+
 .trainer-image-placeholder {
   width: 220px;
   height: 260px;
@@ -499,6 +569,7 @@ em { font-style: italic; color: var(--terracotta); }
   align-items: center;
   justify-content: center;
 }
+
 .trainer-image-placeholder span {
   font-family: var(--font-display);
   font-size: 3rem;
@@ -506,6 +577,7 @@ em { font-style: italic; color: var(--terracotta); }
   color: var(--white);
   opacity: 0.7;
 }
+
 .trainer-badge {
   position: absolute;
   bottom: -14px;
@@ -521,7 +593,9 @@ em { font-style: italic; color: var(--terracotta); }
   white-space: nowrap;
   box-shadow: var(--shadow);
 }
+
 .trainer-text { flex: 1; min-width: 280px; }
+
 .trainer-text p {
   font-size: 1rem;
   line-height: 1.8;
@@ -533,6 +607,7 @@ em { font-style: italic; color: var(--terracotta); }
    HOW IT WORKS
    ============================================================ */
 .how-it-works { background: var(--cream); }
+
 .steps-grid {
   display: flex;
   align-items: flex-start;
@@ -540,6 +615,7 @@ em { font-style: italic; color: var(--terracotta); }
   gap: 1rem;
   flex-wrap: wrap;
 }
+
 .step {
   flex: 1;
   min-width: 220px;
@@ -549,6 +625,7 @@ em { font-style: italic; color: var(--terracotta); }
   border-radius: var(--radius-lg);
   padding: 2rem 1.8rem;
 }
+
 .step-num {
   font-family: var(--font-display);
   font-size: 2.8rem;
@@ -557,11 +634,14 @@ em { font-style: italic; color: var(--terracotta); }
   line-height: 1;
   margin-bottom: 1rem;
 }
+
 .step h4 {
   font-size: 1.05rem;
   margin-bottom: 0.6rem;
 }
+
 .step p { font-size: 0.9rem; line-height: 1.7; }
+
 .step-arrow {
   width: 32px;
   height: 2px;
@@ -570,6 +650,7 @@ em { font-style: italic; color: var(--terracotta); }
   flex-shrink: 0;
   position: relative;
 }
+
 .step-arrow::after {
   content: '';
   position: absolute;
@@ -590,11 +671,13 @@ em { font-style: italic; color: var(--terracotta); }
   padding: 5rem 2rem;
   text-align: center;
 }
+
 .cta-banner h2 {
   color: var(--white);
   font-size: clamp(1.8rem, 4vw, 3rem);
   margin-bottom: 0.8rem;
 }
+
 .cta-banner p {
   color: rgba(255,255,255,0.82);
   font-size: 1rem;
@@ -603,10 +686,12 @@ em { font-style: italic; color: var(--terracotta); }
   margin-left: auto;
   margin-right: auto;
 }
+
 .cta-banner .btn-primary {
   background: var(--white);
   color: var(--sage-dark);
 }
+
 .cta-banner .btn-primary:hover {
   background: var(--cream);
   color: var(--sage-dark);
@@ -619,6 +704,7 @@ em { font-style: italic; color: var(--terracotta); }
   background: var(--bark);
   padding: 3.5rem 2rem 0;
 }
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
@@ -628,28 +714,35 @@ em { font-style: italic; color: var(--terracotta); }
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+
 .footer-brand .logo-text { color: var(--white); font-size: 1.1rem; }
+
 .footer-brand p {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.5);
   margin-top: 0.4rem;
   max-width: 260px;
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 2rem;
 }
+
 .footer-links a {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.6);
   transition: color var(--transition);
 }
+
 .footer-links a:hover { color: var(--white); }
+
 .footer-bottom {
   padding: 1.2rem 0;
   text-align: center;
 }
+
 .footer-bottom p {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.35);
@@ -665,6 +758,12 @@ em { font-style: italic; color: var(--terracotta); }
     min-height: auto;
     padding: 3rem 2rem;
   }
+
+  .hero-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .hero-visual { width: 100%; display: flex; justify-content: center; }
   .hero-card { width: 100%; max-width: 360px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
@@ -689,4 +788,10 @@ em { font-style: italic; color: var(--terracotta); }
   .footer-inner { flex-direction: column; }
   .hero-actions { flex-direction: column; }
   .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+  .hero {
+    padding: 2rem 1.5rem;
+  }
+  .hero-content-wrapper {
+    gap: 1.5rem;
+  }
 }
