@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — Holistic Wellness Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <!-- TO ENABLE: change ANNOUNCEMENT_ACTIVE to true in script.js -->
+  <div id="announcement-bar" class="announcement-bar hidden">
+    <p id="announcement-text"></p>
+    <button class="announcement-close" id="announcement-close" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-leaf"></span>
+        <span class="logo-text">Holistic Wellness Club</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="trainer.html">Trainer</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book Appointment</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="trainer.html">Trainer</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta">Book Appointment</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="section-pad" style="background: var(--cream-dark); border-bottom: 1px solid var(--mist); text-align: center;">
+      <div class="container" style="max-width: 680px;">
+        <p class="section-eyebrow fade-in">What We Offer</p>
+        <h1 class="section-title fade-in" style="font-size: clamp(2.4rem, 5vw, 4rem);">Programs designed <em>for your life</em></h1>
+        <p class="section-sub fade-in-delay" style="font-size: 1.05rem; max-width: 540px; margin: 0 auto;">Three focused wellness programs, one monthly plan — all personalised and guided by Nandini Maurya from day one.</p>
+      </div>
+    </section>
+
+    <!-- SERVICE 1: WEIGHT MANAGEMENT -->
+    <section class="section-pad" style="background: var(--cream);">
+      <div class="container">
+        <div class="trainer-flex">
+          <div style="flex-shrink: 0;">
+            <div style="width: 80px; height: 80px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--sage), var(--sage-dark)); display: flex; align-items: center; justify-content: center;">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="10" r="6" stroke="white" stroke-width="2" fill="none"/>
+                <path d="M6 30c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="trainer-text">
+            <p class="section-eyebrow">Service 01</p>
+            <h2 class="section-title">Weight Management</h2>
+            <p>Achieving and maintaining a healthy weight is about far more than calorie counting. Our Weight Management program takes a comprehensive approach — factoring in your metabolism, lifestyle, food relationship, and daily routine to create a plan that is both effective and sustainable.</p>
+            <p style="margin-top: 1rem;">You will never be handed a generic diet chart. Nandini works with you to identify what genuinely works for your body, adjusting and refining the approach as you progress.</p>
+            <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Personalised diet planning</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Weekly progress checks</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Sustainable results</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">No extreme diets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div style="height: 1px; background: var(--mist);"></div>
+
+    <!-- SERVICE 2: HEALTHY LIFESTYLE COACHING -->
+    <section class="section-pad" style="background: var(--cream);">
+      <div class="container">
+        <div class="trainer-flex" style="flex-direction: row-reverse;">
+          <div style="flex-shrink: 0;">
+            <div style="width: 80px; height: 80px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark)); display: flex; align-items: center; justify-content: center;">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6 C18 6, 8 14, 8 21a10 10 0 0 0 20 0C28 14 18 6 18 6z" stroke="white" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                <path d="M18 26 v-8 M14 22 l4-4 4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="trainer-text">
+            <p class="section-eyebrow">Service 02</p>
+            <h2 class="section-title">Healthy Lifestyle Coaching</h2>
+            <p>Good health is built in the margins of everyday life — in your sleep patterns, your stress responses, your hydration habits, and your morning routines. This program is designed to help you take ownership of those small, consistent choices that compound into transformative change.</p>
+            <p style="margin-top: 1rem;">Through structured coaching sessions and daily guidance, Nandini helps you identify limiting habits, introduce healthier alternatives, and build a lifestyle that energises rather than exhausts you.</p>
+            <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Habit formation guidance</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Sleep & stress support</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Energy improvement</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Ongoing accountability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div style="height: 1px; background: var(--mist);"></div>
+
+    <!-- SERVICE 3: WELLNESS CONSULTATION -->
+    <section class="section-pad" style="background: var(--cream);">
+      <div class="container">
+        <div class="trainer-flex">
+          <div style="flex-shrink: 0;">
+            <div style="width: 80px; height: 80px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #B8A99A, var(--bark-mid)); display: flex; align-items: center; justify-content: center;">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="20" height="20" rx="4" stroke="white" stroke-width="2" fill="none"/>
+                <path d="M13 18h10M13 13h6M13 23h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="trainer-text">
+            <p class="section-eyebrow">Service 03</p>
+            <h2 class="section-title">Wellness Consultation</h2>
+            <p>Before any program begins, understanding where you are today is essential. A wellness consultation with Nandini is a focused, one-on-one conversation about your health history, current challenges, specific goals, and what has or has not worked for you in the past.</p>
+            <p style="margin-top: 1rem;">From this session, a tailored roadmap is created — one that outlines the right program, the right pace, and the right support structure for your unique situation. It is the foundation of everything that follows.</p>
+            <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">1-on-1 with Nandini</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Health history review</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Personalised roadmap</span>
+              <span style="background: var(--cream-dark); border: 1px solid var(--mist); border-radius: 40px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--bark-mid);">Goal-setting session</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONTHLY PLAN -->
+    <section class="section-pad" style="background: var(--cream-dark);">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Paid Monthly Plan</p>
+          <h2 class="section-title">Everything you need, in one plan</h2>
+          <p class="section-sub">The monthly membership gives you full, ongoing access to Nandini's guidance and a structured support system — every single day of the month.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <div class="service-icon s1"></div>
+            </div>
+            <h3>Live Training Sessions</h3>
+            <p>Participate in live, interactive sessions led by Nandini — covering movement, nutrition, mindset, and more. Scheduled regularly to fit your routine.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <div class="service-icon s2"></div>
+            </div>
+            <h3>Daily Diet Monitoring</h3>
+            <p>Share your meals and eating patterns with Nandini for daily review and feedback. Stay aligned with your dietary goals with real-time guidance.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <div class="service-icon s3"></div>
+            </div>
+            <h3>Progress Tracking</h3>
+            <p>Detailed, structured tracking of your health metrics over time — so you can see exactly how far you have come and what to focus on next.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <div class="service-icon s1"></div>
+            </div>
+            <h3>1-on-1 Motivation Support</h3>
+            <p>Direct access to Nandini for personal motivation and guidance when you need it most. No general chatbots — real, human support.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <div class="service-icon s2"></div>
+            </div>
+            <h3>Regular Group Meetings</h3>
+            <p>Connect with fellow members in structured group sessions. Share experiences, stay accountable, and draw strength from a community that understands your journey.</p>
+          </div>
+          <div class="service-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--bark); border-color: var(--bark);">
+            <h3 style="color: var(--white); margin-bottom: 0.7rem;">Ready to join?</h3>
+            <p style="color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; font-size: 0.92rem;">Book your first consultation and find out which plan is right for you.</p>
+            <a href="book.html" class="btn-primary">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section-pad" style="background: var(--cream); text-align: center;">
+      <div class="container" style="max-width: 600px;">
+        <p class="section-eyebrow">Pricing</p>
+        <h2 class="section-title">Transparent, personalised pricing</h2>
+        <p style="color: var(--bark-mid); line-height: 1.85; margin-bottom: 2rem;">We do not offer one-size-fits-all pricing because we do not offer one-size-fits-all wellness. Your plan is built around your specific needs, and so is the investment. Reach out to us and we will walk you through the options in detail.</p>
+        <a href="contact.html" class="btn-ghost" style="margin-right: 1rem;">Contact Us</a>
+        <a href="book.html" class="btn-primary">Book a Consultation</a>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Your program starts with a conversation</h2>
+        <p>Book a consultation with Nandini and take the first step toward a healthier, more balanced life.</p>
+        <a href="book.html" class="btn-primary">Book Your Appointment</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Holistic Wellness Club</span>
+        <p>Guided by Nandini Maurya — Wellness Coach & Managing Head</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="trainer.html">Trainer</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html">Book Appointment</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Holistic Wellness Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
