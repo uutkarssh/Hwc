@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — Holistic Wellness Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    /* Contact page only — minimal additions, no changes to design system */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 1.4rem 1.6rem;
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1rem;
+    }
+    .contact-detail-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+    .contact-detail-value {
+      font-size: 0.96rem;
+      color: var(--bark);
+      font-weight: 400;
+    }
+    .contact-form-wrap {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.2rem;
+      box-shadow: var(--shadow);
+    }
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bark-mid);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--cream);
+      border: 1px solid var(--mist);
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--bark);
+      outline: none;
+      transition: border-color var(--transition);
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage);
+    }
+    .form-group textarea { height: 130px; }
+    .social-row {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 0.6rem;
+    }
+    .social-chip {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--bark-mid);
+      background: var(--cream-dark);
+      border: 1px solid var(--mist);
+      border-radius: 40px;
+      padding: 0.35rem 1rem;
+      transition: background var(--transition), color var(--transition);
+    }
+    .social-chip:hover {
+      background: var(--bark);
+      color: var(--white);
+    }
+    @media (max-width: 820px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div id="announcement-bar" class="announcement-bar hidden">
+    <p id="announcement-text"></p>
+    <button class="announcement-close" id="announcement-close" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-leaf"></span>
+        <span class="logo-text">Holistic Wellness Club</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="trainer.html">Trainer</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="book.html" class="nav-cta">Book Appointment</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="trainer.html">Trainer</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta">Book Appointment</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="highlight-strip" style="padding: 4rem 2rem;">
+      <div class="container" style="text-align:center;">
+        <p class="section-eyebrow" style="color: var(--mist); opacity:0.8;">We are here</p>
+        <h1 style="color: var(--white); font-size: clamp(2.4rem, 5vw, 4rem); margin-top:0.4rem;">Get in Touch</h1>
+        <p style="color: rgba(255,255,255,0.65); margin-top:0.6rem; font-size:1rem;">Have a question? Ready to begin? We would love to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-pad">
+      <div class="container fade-in">
+        <div class="contact-grid">
+
+          <!-- Left: Contact Details -->
+          <div>
+            <p class="section-eyebrow">Contact Details</p>
+            <h2 class="section-title" style="margin-bottom:2rem;">Reach Out to Us</h2>
+
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Phone</span>
+              <a href="tel:+918053844594" class="contact-detail-value">+91 80538 44594</a>
+            </div>
+
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Email</span>
+              <a href="mailto:holisticwellness@gmail.com" class="contact-detail-value">holisticwellness@gmail.com</a>
+            </div>
+
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Location</span>
+              <span class="contact-detail-value">India</span>
+            </div>
+
+            <div class="contact-detail-item">
+              <span class="contact-detail-label">Working Hours</span>
+              <span class="contact-detail-value">Monday – Saturday, 9 AM – 7 PM</span>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <p style="font-size:0.8rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--terracotta); margin-bottom:0.8rem;">Connect on Social</p>
+              <div class="social-row">
+                <a href="#" class="social-chip">Instagram</a>
+                <a href="#" class="social-chip">Facebook</a>
+                <a href="#" class="social-chip">WhatsApp</a>
+                <a href="#" class="social-chip">YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="contact-form-wrap">
+            <p class="section-eyebrow" style="margin-bottom:0.4rem;">Send a Message</p>
+            <h3 style="margin-bottom:1.8rem; font-size:1.5rem;">We will get back to you within 24 hours</h3>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about yourself, your goals, or any questions you have..."></textarea>
+            </div>
+            <button type="button" class="btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+            <p style="font-size:0.78rem; color:var(--bark-mid); margin-top:1rem; text-align:center;">Or call us directly at <a href="tel:+918053844594" style="color:var(--terracotta); font-weight:500;">+91 80538 44594</a></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Prefer to book directly?</h2>
+        <p>Use our appointment form and Nandini will confirm your slot within 24 hours.</p>
+        <a href="book.html" class="btn-primary">Book an Appointment</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Holistic Wellness Club</span>
+        <p>Guided by Nandini Maurya — Wellness Coach &amp; Managing Head</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="trainer.html">Trainer</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html">Book Appointment</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Holistic Wellness Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
